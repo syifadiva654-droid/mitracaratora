@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaraTora — Kemitraan Edukasi Animasi Bahasa Jawa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Cara<span>Tora</span></div>
+        <ul class="nav-links">
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#keunggulan">Keunggulan</a></li>
+            <li><a href="#jenis">Paket Kemitraan</a></li>
+            <li><a href="#alur">Alur</a></li>
+        </ul>
+        <a href="#daftar" class="btn-nav">Daftar Mitra</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">✦ Program Kemitraan CaraTora 2025 ✦</div>
+        <h1>Bersama Lestarikan<br>Bahasa Jawa untuk<br>Generasi Muda</h1>
+        <p class="subtitle">Jadilah mitra strategis CaraTora — platform video edukasi animasi Bahasa Jawa interaktif untuk anak-anak kelas 1–3 SD.</p>
+        <blockquote class="tagline">
+            "Nguri-nguri kanthi Nguri ari"
+            <span>Melestarikan dengan merawat setiap hari</span>
+        </blockquote>
+        <div class="hero-buttons">
+            <a href="#daftar" class="btn-primary">Daftar Sebagai Mitra</a>
+            <a href="#tentang" class="btn-secondary">Pelajari Lebih Lanjut ↓</a>
+        </div>
+        <div class="hero-ornament"></div>
+    </section>
+
+    <!-- FLASH MESSAGES -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-container">
+          {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">
+              {{ message }}
+              <button class="flash-close" onclick="this.parentElement.remove()">✕</button>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <!-- TENTANG -->
+    <section id="tentang" class="section-container">
+        <span class="sub-heading">Tentang CaraTora</span>
+        <h2>Merawat Bahasa Jawa Melalui Animasi Edukatif</h2>
+        <p class="section-desc">CaraTora hadir sebagai solusi kreatif dalam pelestarian Bahasa Jawa untuk generasi muda. Melalui video edukasi animasi yang interaktif, anak-anak diajak mengenal kosakata, ungkapan, dan budaya Jawa dengan cara yang menyenangkan.</p>
+        <div class="grid-4">
+            <div class="card">
+                <div class="card-icon">🎬</div>
+                <h3>Animasi Berkualitas Tinggi</h3>
+                <p>Konten video animasi 2D penuh warna yang menarik perhatian dan minat belajar anak-anak SD.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Kurikulum Terstandarisasi</h3>
+                <p>Konten diselaraskan dengan kurikulum muatan lokal Bahasa Jawa Kemendikbudristek.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎮</div>
+                <h3>Metode Menyenangkan</h3>
+                <p>Belajar sambil bermain melalui lagu, cerita, dan karakter animasi yang dekat dengan budaya Jawa.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧒</div>
+                <h3>Untuk Kelas 1–3 SD</h3>
+                <p>Dirancang khusus untuk usia emas 6–9 tahun, fase kritis pengenalan bahasa ibu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section id="keunggulan" class="section-container bg-darker">
+        <span class="sub-heading">Keunggulan Kemitraan</span>
+        <h2>Mengapa Bermitra dengan CaraTora?</h2>
+        <p class="section-desc">Lebih dari sekadar lisensi konten — kemitraan CaraTora adalah kolaborasi bermakna untuk masa depan Bahasa Jawa.</p>
+        <div class="grid-3">
+            <div class="card-keunggulan">
+                <div class="k-num">01</div>
+                <h4>Akses Konten Eksklusif</h4>
+                <p>Dapatkan akses penuh ke seluruh konten video animasi CaraTora yang terus diperbarui setiap semester.</p>
+            </div>
+            <div class="card-keunggulan">
+                <div class="k-num">02</div>
+                <h4>Kurikulum Berstandar</h4>
+                <p>Semua konten telah diselaraskan dengan kurikulum muatan lokal resmi Bahasa Jawa Kemendikbudristek.</p>
+            </div>
+            <div class="card-keunggulan">
+                <div class="k-num">03</div>
+                <h4>Dukungan Pedagogis</h4>
+                <p>Tim edukasi CaraTora mendampingi implementasi di kelas, termasuk pelatihan guru dan modul ajar.</p>
+            </div>
+            <div class="card-keunggulan">
+                <div class="k-num">04</div>
+                <h4>Dampak Nyata</h4>
+                <p>Berkontribusi langsung pada pelestarian Bahasa Jawa dan penguatan identitas budaya generasi muda.</p>
+            </div>
+            <div class="card-keunggulan">
+                <div class="k-num">05</div>
+                <h4>Sertifikat Mitra Resmi</h4>
+                <p>Institusi mitra mendapatkan sertifikat resmi sebagai Mitra Edukasi CaraTora yang diakui secara formal.</p>
+            </div>
+            <div class="card-keunggulan">
+                <div class="k-num">06</div>
+                <h4>Kemitraan Jangka Panjang</h4>
+                <p>Kami berkomitmen membangun relasi yang berkelanjutan dengan evaluasi berkala dan pembaruan layanan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JENIS KEMITRAAN -->
+    <section id="jenis" class="section-container">
+        <span class="sub-heading">Jenis Kemitraan</span>
+        <h2>Pilih Model Kemitraan yang Tepat</h2>
+        <p class="section-desc">Kami menyediakan empat jalur kemitraan yang dirancang sesuai kebutuhan institusi Anda.</p>
+        <div class="grid-2">
+            <div class="card-paket populer">
+                <div class="badge-populer">Paling Populer</div>
+                <h3>Sekolah Dasar</h3>
+                <span class="target-user">SD Negeri &amp; Swasta</span>
+                <p>Integrasikan CaraTora ke dalam mata pelajaran muatan lokal Bahasa Jawa. Dilengkapi modul ajar dan panduan guru.</p>
+                <ul>
+                    <li>✓ Lisensi multi-kelas</li>
+                    <li>✓ Modul ajar lengkap</li>
+                    <li>✓ Pelatihan guru</li>
+                    <li>✓ Laporan progres siswa</li>
+                </ul>
+                <a href="#daftar" class="btn-paket">Daftar untuk SD</a>
+            </div>
+            <div class="card-paket">
+                <h3>Lembaga Pendidikan</h3>
+                <span class="target-user">PAUD, TK &amp; Bimbel</span>
+                <p>Perkaya program pembelajaran dengan konten animasi Bahasa Jawa yang sesuai usia dan interaktif.</p>
+                <ul>
+                    <li>✓ Lisensi institusi</li>
+                    <li>✓ Konten pengenalan awal</li>
+                    <li>✓ Dukungan teknis</li>
+                    <li>✓ Branding bersama</li>
+                </ul>
+                <a href="#daftar" class="btn-paket">Daftar untuk Lembaga</a>
+            </div>
+            <div class="card-paket">
+                <h3>Pemerintah Daerah</h3>
+                <span class="target-user">Dinas Pendidikan</span>
+                <p>Implementasi masif untuk program pelestarian bahasa daerah di lingkup kabupaten/kota.</p>
+                <ul>
+                    <li>✓ Lisensi massal</li>
+                    <li>✓ Kustomisasi konten</li>
+                    <li>✓ Dashboard pemantauan</li>
+                    <li>✓ MoU resmi</li>
+                </ul>
+                <a href="#daftar" class="btn-paket">Daftar untuk Pemda</a>
+            </div>
+            <div class="card-paket">
+                <h3>Komunitas &amp; Yayasan</h3>
+                <span class="target-user">NGO &amp; Komunitas Budaya</span>
+                <p>Wujudkan misi pelestarian budaya Jawa bersama CaraTora melalui program komunitas.</p>
+                <ul>
+                    <li>✓ Kemitraan sosial</li>
+                    <li>✓ Harga khusus</li>
+                    <li>✓ Co-branding</li>
+                    <li>✓ Kampanye bersama</li>
+                </ul>
+                <a href="#daftar" class="btn-paket">Daftar Komunitas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALUR KEMITRAAN -->
+    <section id="alur" class="section-container bg-darker">
+        <span class="sub-heading">Alur Kemitraan</span>
+        <h2>Proses Mudah Menjadi Mitra CaraTora</h2>
+        <p class="section-desc">Lima langkah dari pendaftaran hingga konten aktif digunakan siswa Anda.</p>
+        <div class="alur-flex">
+            <div class="alur-step">
+                <span class="step-num">01</span>
+                <div class="step-line"></div>
+                <h4>Isi Formulir</h4>
+                <p>Lengkapi formulir pendaftaran mitra di bagian bawah halaman ini.</p>
+            </div>
+            <div class="alur-step">
+                <span class="step-num">02</span>
+                <div class="step-line"></div>
+                <h4>Konsultasi</h4>
+                <p>Tim CaraTora akan menghubungi Anda dalam 2×24 jam.</p>
+            </div>
+            <div class="alur-step">
+                <span class="step-num">03</span>
+                <div class="step-line"></div>
+                <h4>MOU Resmi</h4>
+                <p>Penandatanganan Nota Kesepahaman kemitraan bersama.</p>
+            </div>
+            <div class="alur-step">
+                <span class="step-num">04</span>
+                <div class="step-line"></div>
+                <h4>Onboarding</h4>
+                <p>Pendampingan implementasi &amp; pelatihan guru oleh tim kami.</p>
+            </div>
+            <div class="alur-step">
+                <span class="step-num">05</span>
+                <div class="step-line last"></div>
+                <h4>Go-Live</h4>
+                <p>Konten digunakan siswa disertai monitoring berkala dari CaraTora.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM PENDAFTARAN -->
+    <section id="daftar" class="section-form">
+        <div class="form-box">
+            <span class="sub-heading">Formulir Kemitraan</span>
+            <h2>Daftar Menjadi Mitra CaraTora</h2>
+            <p>Isi formulir berikut dan tim kami akan segera menghubungi Anda dalam 2×24 jam.</p>
+
+            <form action="/kirim-daftar" method="POST">
+                <div class="input-group">
+                    <label for="nama_institusi">Nama Institusi / Lembaga <span class="req">*</span></label>
+                    <input type="text" id="nama_institusi" name="nama_institusi" placeholder="Contoh: SD Negeri 1 Yogyakarta" required>
+                </div>
+                <div class="input-group">
+                    <label for="nama_pic">Nama PIC (Person in Charge) <span class="req">*</span></label>
+                    <input type="text" id="nama_pic" name="nama_pic" placeholder="Nama lengkap Anda" required>
+                </div>
+                <div class="grid-form-2">
+                    <div class="input-group">
+                        <label for="email">Email Aktif <span class="req">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="email@institusi.sch.id" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="whatsapp">Nomor WhatsApp <span class="req">*</span></label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="08xx-xxxx-xxxx" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="jenis_kemitraan">Jenis Kemitraan <span class="req">*</span></label>
+                    <select id="jenis_kemitraan" name="jenis_kemitraan" required>
+                        <option value="">— Pilih jenis kemitraan —</option>
+                        <option value="Sekolah Dasar (SD)">Sekolah Dasar (SD)</option>
+                        <option value="PAUD / TK">PAUD / TK</option>
+                        <option value="Bimbingan Belajar">Bimbingan Belajar</option>
+                        <option value="Dinas Pendidikan">Dinas Pendidikan</option>
+                        <option value="Yayasan / NGO">Yayasan / NGO</option>
+                        <option value="Komunitas Budaya">Komunitas Budaya</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="pesan">Pesan / Pertanyaan</label>
+                    <textarea id="pesan" name="pesan" rows="4" placeholder="Ceritakan lebih lanjut tentang kebutuhan atau pertanyaan Anda..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Kirim Permohonan Kemitraan →</button>
+                <small class="disclaimer">Dengan mengirimkan formulir ini, Anda menyetujui untuk dihubungi oleh tim CaraTora.</small>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="brand-footer">
+                <h3>Cara<span>Tora</span></h3>
+                <p>Platform video edukasi animasi Bahasa Jawa untuk anak-anak kelas 1–3 SD. Bersama melestarikan warisan budaya leluhur.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#tentang">Tentang CaraTora</a></li>
+                    <li><a href="#keunggulan">Keunggulan Mitra</a></li>
+                    <li><a href="#jenis">Jenis Kemitraan</a></li>
+                    <li><a href="#alur">Alur Kemitraan</a></li>
+                    <li><a href="#daftar">Daftar Mitra</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p>📧 kemitraan@caratora.id</p>
+                <p>📸 @caratora.id</p>
+                <p>📍 Kudus, Jawa Tengah, Indonesia</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 CaraTora. Hak Cipta Dilindungi. &nbsp;|&nbsp;
+            <a href="/admin/pendaftar" style="color:#555; text-decoration:none;">Admin</a>
+        </div>
+    </footer>
+
+</body>
+</html>
