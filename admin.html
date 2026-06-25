@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin — Daftar Pendaftar CaraTora</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #24140e; --card: #361f16; --border: #523424; --gold: #dca754; --text: #f9f5ed; --muted: #cbbba0; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Plus Jakarta Sans',sans-serif; }
+        body { background: var(--bg); color: var(--text); padding: 40px 5%; }
+        h1 { color: var(--gold); margin-bottom: 8px; }
+        p { color: var(--muted); margin-bottom: 30px; }
+        .badge { display:inline-block; background: var(--gold); color: var(--bg); font-weight:800; padding: 4px 12px; border-radius: 20px; font-size:0.85rem; margin-left: 10px; }
+        table { width:100%; border-collapse:collapse; background: var(--card); border-radius:12px; overflow:hidden; }
+        th { background: var(--border); padding: 14px 16px; text-align:left; color: var(--gold); font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; }
+        td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--muted); font-size:0.9rem; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(82,52,36,0.3); }
+        .empty { text-align:center; padding:60px; color: var(--muted); }
+        .back { display:inline-block; margin-bottom:30px; color:var(--gold); text-decoration:none; font-weight:600; }
+        .back:hover { text-decoration:underline; }
+    </style>
+</head>
+<body>
+    <a href="/" class="back">← Kembali ke Website</a>
+    <h1>Daftar Pendaftar Mitra <span class="badge">{{ rows|length }} Pendaftar</span></h1>
+    <p>Data tersimpan secara otomatis di file <code>pendaftar.csv</code></p>
+
+    {% if rows %}
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Tanggal</th>
+                <th>Nama Institusi</th>
+                <th>PIC</th>
+                <th>Email</th>
+                <th>WhatsApp</th>
+                <th>Jenis Kemitraan</th>
+                <th>Pesan</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ row['Tanggal'] }}</td>
+                <td><strong style="color:#f9f5ed">{{ row['Nama Institusi'] }}</strong></td>
+                <td>{{ row['Nama PIC'] }}</td>
+                <td>{{ row['Email'] }}</td>
+                <td>{{ row['WhatsApp'] }}</td>
+                <td><span style="color:#dca754">{{ row['Jenis Kemitraan'] }}</span></td>
+                <td>{{ row['Pesan'] or '—' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <table><tr><td class="empty">Belum ada pendaftar. Data akan muncul di sini setelah formulir dikirimkan.</td></tr></table>
+    {% endif %}
+</body>
+</html>
